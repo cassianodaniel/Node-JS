@@ -1,7 +1,11 @@
-var http = require('http');
+/*CRIANDO SERVIDOR EM HTML
+OBSERVACAO: MÉTODO MAIS EFICAZ NO ARQUIVO:
+https://github.com/danielcassiano/Node-JS/blob/master/expressframework%2Cres.send
+(UTILIZANDO EXPRESS FRAMEWORK)*/
 
+var http = require('http');
 http.createServer(function(req, res){
     res.end('TEXTO QUALQUER'); //html
-}).listen(8081);
+}).listen(8081); //porta
 
-console.log('Servidor rodando'); //terminal
+console.log('Servidor rodando na url http://localhost:8081'); //terminal
