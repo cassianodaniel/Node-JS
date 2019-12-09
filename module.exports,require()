@@ -1,14 +1,19 @@
-module.exports = somar; 
-require("./somar") //somar.js
+//PEGUE DE OUTROS ARQUIVOS, FUNCOES (OU MÉTODOS) E VARIÁVEIS (OU ATRIBUTOS) QUE ESTÃO DENTRO DELES 
+//E APLIQUE DENTRO DO ARQUIVO SOLICITADO, DETERMINADA FUNCAO DO ARQUIVO PUXADO.
+//É COMO SOLICITAR MÉTODOS E ATRIBUTOS DE CONSTRUTORES EM C++, UTILIZANDO NODE.JS
+
+module.exports = soma; //exporte a variável soma(que acompanha a funcao de soma nela)
+require("./soma") //requerimento da variável com funcao soma dentro, na main - ./soma é o nome do arquivo que possui a variável dentro,
+//ou seja, o requerimento solicita o nome do arquivo e utiliza suas variáveis dentro
 __________________________________________________
 
 //main
-var soma = require("./soma.js");
+var somar = require("./soma.js");
 var subtracao = require("./subtracao");
 var divisao = require("./divisao");
 var multiplicacao = require("./multiplicacao");
 
-var x = soma(1,2);
+var x = somar(1,2);
 console.log(x);
 
 var y = subtracao(2,3);
@@ -19,6 +24,7 @@ console.log(multiplicacao(2,3));
 
 var w = divisao(2,3);
 console.log(w);
+__________________________________________________
 
 //soma.js
 var soma = function(a,b){
@@ -26,6 +32,7 @@ var soma = function(a,b){
 }
 
 module.exports = soma;
+__________________________________________________
 
 //subtracao.js
 var subtracao = function(a,b){
@@ -33,6 +40,7 @@ var subtracao = function(a,b){
 }
 
 module.exports = subtracao;
+__________________________________________________
 
 //divisao.js
 var divisao = function(a,b){
@@ -40,6 +48,7 @@ var divisao = function(a,b){
 }
 
 module.exports = divisao;
+__________________________________________________
 
 //multiplicacao.js
 var multiplicacao = function(a,b){
@@ -47,4 +56,3 @@ var multiplicacao = function(a,b){
 }
 
 module.exports = multiplicacao;
-
