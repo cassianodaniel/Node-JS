@@ -15,10 +15,16 @@ app.get("/sobre", function(req, res){//http://localhost:8081/sobre
     res.send("<h1>Minha pagina sobre</h1>");
 });
 
-app.get("/blog", function(req, res){//http://localhost:8081/blog
-    res.send("Bem-vindo ao meu blog!");
-});
-
 app.get("/ola/:nome/:cargo", function(req, res){//http://localhost:8081/ola/DIGITEPARAMETRONOMEAQUI/DIGITEPARAMETROCARGOAQUI
     res.send("Ola " + req.params.nome + "." + "<br>" + "Seu cargo eh: "+ req.params.cargo);
+});
+
+app.use(express.static(__dirname + '/loginstyle.css'));
+
+app.get("/sendfile", function(req,res){
+    app.set('view engine', 'html');
+    res.status(200).sendFile(__dirname + '/index.html');
+    //__dirname retorna o diretório padrão desta aplicacao,
+    // ou seja, a pasta origem que este arquivo (servidor.js) está rodando.
+    //A concatenacao + /html/index.html soma o diretório raíz + estas pastas
 });
